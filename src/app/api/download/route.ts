@@ -7,11 +7,7 @@ async function getYt() {
   if (!yt) {
     yt = await Innertube.create({ 
       cache: new UniversalCache(false),
-      fetch_visitor_data: false,
-      generate_session_locally: true,
-      evaluator: (code: string, env: any) => {
-        return vm.runInNewContext(code, env);
-      }
+      generate_session_locally: true
     });
   }
   return yt;

@@ -7,11 +7,7 @@ async function getYt() {
   if (!yt) {
     yt = await Innertube.create({ 
       cache: new UniversalCache(false),
-      fetch_visitor_data: false,
-      generate_session_locally: true,
-      evaluator: (code: string, env: any) => {
-        return vm.runInNewContext(code, env);
-      }
+      generate_session_locally: true
     });
   }
   return yt;
@@ -33,11 +29,12 @@ export async function GET(req: NextRequest) {
     const title = info.basic_info.title
     const thumbnail = info.basic_info.thumbnail?.[0]?.url || null
 
-    const formats: any[] = []
+    type VideoFormat = { itag: number; quality_label?: string; quality?: string; mime_type: string; fps?: number; content_length?: string; bitrate?: number; };
+    const formats: Record<string, unknown>[] = []
     
     // Combined formats
     if (info.streaming_data?.formats) {
-      info.streaming_data.formats.forEach(f => {
+      info.streaming_data.formats.forEach((f: any) => {
          formats.push({
            itag: f.itag,
            quality: f.quality_label || f.quality || '360p',
@@ -50,9 +47,9 @@ export async function GET(req: NextRequest) {
 
     // High Quality Video Only
     if (info.streaming_data?.adaptive_formats) {
-       const videos = info.streaming_data.adaptive_formats.filter(f => f.mime_type.startsWith('video/mp4'));
-       videos.forEach(f => {
-         if (!formats.find(ex => ex.quality === f.quality_label || ex.quality === `${f.quality_label} (Video Only)`)) {
+       const videos = info.streaming_data.adaptive_formats.filter((f: any) => f.mime_type.startsWith('video/mp4'));
+       videos.forEach((f: any) => {
+         if (!formats.find(ex => (ex as any).quality === f.quality_label || (ex as any).quality === `${f.quality_label} (Video Only)`)) {
             formats.push({
               itag: f.itag,
               quality: (f.quality_label || f.quality || '720p') + ' (Video Only)',
@@ -66,9 +63,9 @@ export async function GET(req: NextRequest) {
 
     // Audio only
     if (info.streaming_data?.adaptive_formats) {
-       const audioFormats = info.streaming_data.adaptive_formats.filter(f => f.mime_type.startsWith('audio/'));
+       const audioFormats = info.streaming_data.adaptive_formats.filter((f: any) => f.mime_type.startsWith('audio/'));
        if (audioFormats.length > 0) {
-          const a = audioFormats.sort((a,b) => (b.bitrate || 0) - (a.bitrate || 0))[0];
+          const a = audioFormats.sort((a: any, b: any) => (b.bitrate || 0) - (a.bitrate || 0))[0];
           formats.push({
              itag: a.itag,
              quality: `Audio Only (${Math.round((a.bitrate||0)/1000)}kbps)`,
@@ -81,8 +78,8 @@ export async function GET(req: NextRequest) {
 
     formats.sort((a, b) => {
        const order = ['2160p (Video Only)', '1440p (Video Only)', '1080p (Video Only)', '1080p', '720p (Video Only)', '720p', '480p', '360p'];
-       const indexA = order.indexOf(a.quality);
-       const indexB = order.indexOf(b.quality);
+       const indexA = order.indexOf((a as any).quality as string);
+       const indexB = order.indexOf((b as any).quality as string);
        if (indexA === -1 && indexB === -1) return 0;
        if (indexA === -1) return 1;
        if (indexB === -1) return -1;

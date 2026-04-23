@@ -5,7 +5,6 @@ import { resolveUrl, VideoMeta, PLATFORM_CONFIG } from '@/lib/resolver'
 import VideoPlayer from '@/components/VideoPlayer'
 import HistoryPanel from '@/components/HistoryPanel'
 import CustomCursor from '@/components/CustomCursor'
-import DownloadPanel from '@/components/DownloadPanel'
 import AffiliateBanner from '@/components/AffiliateBanner'
 
 const SUPPORTED_PLATFORMS = [
@@ -299,8 +298,16 @@ export default function Home() {
                   Open Original
                 </a>
 
-                {/* Download Button */}
-                <DownloadPanel videoUrl={meta.originalUrl} platform={meta.platform} />
+                {/* Save Button (Replacing Download) */}
+                <button
+                  onClick={() => setShowHistory(true)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all"
+                  style={{ background: 'rgba(0,245,196,0.1)', border: '1px solid rgba(0,245,196,0.25)', color: '#00f5c4' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  Save
+                </button>
 
                 <button onClick={handleClear}
                   className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all ml-auto"
