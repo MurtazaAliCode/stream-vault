@@ -49,8 +49,11 @@ export async function GET(req: NextRequest) {
     const readable = new ReadableStream({
       async start(controller) {
         try {
-          for await (const chunk of stream) {
-             controller.enqueue(chunk);
+          const reader = (stream as any).getReader();
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            controller.enqueue(value);
           }
           controller.close();
         } catch (e) {
