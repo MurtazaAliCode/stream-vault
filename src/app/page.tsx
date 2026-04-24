@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from 'react'
 import { resolveUrl, VideoMeta, PLATFORM_CONFIG } from '@/lib/resolver'
 import VideoPlayer from '@/components/VideoPlayer'
 import HistoryPanel from '@/components/HistoryPanel'
-import CustomCursor from '@/components/CustomCursor'
 import AffiliateBanner from '@/components/AffiliateBanner'
 
 const SUPPORTED_PLATFORMS = [
@@ -89,8 +88,6 @@ export default function Home() {
 
   return (
     <>
-      <CustomCursor />
-
       <div className="min-h-screen grid-bg relative">
 
         {/* ── Ambient orbs ─────────────────────────────────── */}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CustomCursor from '@/components/CustomCursor'
 
 export const metadata: Metadata = {
   title: 'StreamVault — Watch Any Video Link',
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="scanlines noise">
+        <CustomCursor />
         {children}
       </body>
     </html>
