@@ -350,7 +350,7 @@ export default function Home() {
   return (
     <>
       <LanguageSelector current={lang} onChange={setLang} />
-      <div className="min-h-screen grid-bg relative" style={{ direction: (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr' }}>
+      <div className="min-h-screen grid-bg relative overflow-x-hidden" style={{ direction: (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr' }}>
 
         {/* ── Ambient orbs ─────────────────────────────────── */}
         <div className="fixed top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
@@ -383,7 +383,7 @@ export default function Home() {
               </div>
 
               <h1 style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.04em' }}
-                className="text-4xl sm:text-6xl md:text-8xl text-white mb-3 tracking-tighter uppercase">
+                className="text-3xl sm:text-5xl md:text-8xl text-white mb-3 tracking-tighter uppercase px-2">
                 {lang === 'en' ? 'STREAM' : ''}<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5c4] to-[#00d1a7]">{lang === 'en' ? 'VAULT' : t.back}</span>
               </h1>
 
