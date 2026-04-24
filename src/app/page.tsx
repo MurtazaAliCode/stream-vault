@@ -402,22 +402,24 @@ export default function Home() {
         </div>
 
         {/* ── Footer ─────────────────────────────────────────── */}
-        <footer className="text-center py-12 text-ghost text-xs mt-10"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+        <footer className="text-center py-12 mt-10"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
             <div className="flex flex-col items-center gap-6">
-              <span style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.1em', color: '#444460' }}>
+              <span style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.2em', color: '#00f5c4' }} className="text-sm font-bold opacity-80">
                 STREAMVAULT
               </span>
               
-              <div className="flex items-center gap-6 text-[10px] uppercase tracking-widest font-medium">
-                <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-                <span style={{ color: '#1a1a28' }}>·</span>
-                <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
-                <span style={{ color: '#1a1a28' }}>·</span>
-                <a href="mailto:contact@streamvault.com" className="hover:text-white transition-colors">Contact</a>
+              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-[11px] uppercase tracking-[0.2em] font-bold">
+                <a href="/privacy" className="text-ghost hover:text-[#00f5c4] transition-all duration-300">Privacy Policy</a>
+                <a href="/terms" className="text-ghost hover:text-[#00f5c4] transition-all duration-300">Terms of Service</a>
+                <a href="mailto:contact@streamvault.com" className="text-ghost hover:text-[#00f5c4] transition-all duration-300">Contact</a>
               </div>
 
-              <span className="opacity-30">© 2026 StreamVault · Universal video player</span>
+              <div className="h-px w-12 bg-white/10" />
+
+              <span className="text-ghost opacity-40 text-[10px] tracking-widest">
+                © 2026 STREAMVAULT · UNIVERSAL VIDEO PLAYER
+              </span>
             </div>
           </footer>
 
