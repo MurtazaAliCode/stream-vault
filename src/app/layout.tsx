@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
 }
 
 export const viewport = {
@@ -61,6 +65,21 @@ export default function RootLayout({
         <CustomCursor />
         <AdBlockDetector />
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful');
+                  }, function(err) {
+                    console.log('ServiceWorker registration failed');
+                  });
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   )
