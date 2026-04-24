@@ -6,6 +6,7 @@ import VideoPlayer from '@/components/VideoPlayer'
 import HistoryPanel from '@/components/HistoryPanel'
 import AffiliateBanner from '@/components/AffiliateBanner'
 import LanguageSelector, { LANGUAGES } from '@/components/LanguageSelector'
+import PromotionalToast from '@/components/PromotionalToast'
 
 const SUPPORTED_PLATFORMS = [
   { name: 'YouTube', color: '#ff0000' },
@@ -40,7 +41,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'Total Downloads',
     statsActive: 'Active Users',
     statsFree: 'Free Forever',
-    back: 'STREAMVAULT'
+    back: 'STREAMVAULT',
+    appPromo: 'Install StreamVault as an app! Click the ⋮ menu and select "Add to Home Screen" for a faster experience.'
   },
   ur: {
     tagline: 'کہیں سے بھی ویڈیو لنک پیسٹ کریں — فوراً دیکھیں، بغیر کسی رکاوٹ کے',
@@ -63,7 +65,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'کل ڈاؤن لوڈز',
     statsActive: 'ایکٹو صارفین',
     statsFree: 'ہمیشہ مفت',
-    back: 'اسٹریم والٹ'
+    back: 'اسٹریم والٹ',
+    appPromo: 'اسٹریم والٹ کو بطور ایپ انسٹال کریں! ⋮ مینو پر کلک کریں اور بہتر تجربے کے لیے "Add to Home Screen" منتخب کریں۔'
   },
   hi: {
     tagline: 'कहीं से भी वीडियो लिंक पेस्ट करें — तुरंत देखें, बिना किसी रुकावट के',
@@ -86,7 +89,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'कुल डाउनलोड',
     statsActive: 'एक्टिव यूजर्स',
     statsFree: 'हमेशा फ्री',
-    back: 'स्ट्रीमवॉल्ट'
+    back: 'स्ट्रीमवॉल्ट',
+    appPromo: 'StreamVault को ऐप के रूप में इंस्टॉल करें! ⋮ मेनू पर क्लिक करें और "Add to Home Screen" चुनें।'
   },
   es: {
     tagline: 'Pega cualquier enlace de video desde cualquier lugar — míralo al instante, sin distracciones',
@@ -247,7 +251,8 @@ const TRANSLATIONS: any = {
     statsDownloads: '総ダウンロード数',
     statsActive: 'アクティブユーザー',
     statsFree: '永久無料',
-    back: 'ストリームヴォルト'
+    back: 'ストリームヴォルト',
+    downloadPromo: 'ご存知ですか？動画を保存してオフラインで見ることもできます。'
   },
   it: {
     tagline: 'Incolla qualsiasi link video da qualsiasi luogo — guardalo istantaneamente, senza distrazioni',
@@ -270,7 +275,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'Download Totali',
     statsActive: 'Utenti Attivi',
     statsFree: 'Sempre Gratis',
-    back: 'STREAMVAULT'
+    back: 'STREAMVAULT',
+    downloadPromo: 'Lo sapevi? Puoi anche salvare i video per guardarli offline!'
   }
 }
 
@@ -350,6 +356,7 @@ export default function Home() {
   return (
     <>
       <LanguageSelector current={lang} onChange={setLang} />
+      <PromotionalToast message={t.appPromo} />
       <div className="min-h-screen grid-bg relative overflow-x-hidden" style={{ direction: (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr' }}>
 
         {/* ── Ambient orbs ─────────────────────────────────── */}
