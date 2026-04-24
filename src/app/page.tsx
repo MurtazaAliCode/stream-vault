@@ -383,11 +383,11 @@ export default function Home() {
               </div>
 
               <h1 style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.04em' }}
-                className="text-6xl md:text-8xl text-white mb-3 tracking-tighter uppercase">
+                className="text-4xl sm:text-6xl md:text-8xl text-white mb-3 tracking-tighter uppercase">
                 {lang === 'en' ? 'STREAM' : ''}<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5c4] to-[#00d1a7]">{lang === 'en' ? 'VAULT' : t.back}</span>
               </h1>
 
-              <p className="text-ghost text-lg md:text-xl font-light max-w-md mx-auto leading-relaxed">
+              <p className="text-ghost text-base sm:text-lg md:text-xl font-light max-w-md mx-auto leading-relaxed px-4">
                 {t.tagline}
               </p>
 
@@ -435,7 +435,7 @@ export default function Home() {
 
           {/* ── URL Input ───────────────────────────────────── */}
           <div className="mb-8">
-            <div className="relative flex gap-3">
+            <div className="relative flex flex-col sm:flex-row gap-3">
               <div className="flex-1 relative">
                 <input
                   ref={inputRef}
@@ -466,14 +466,14 @@ export default function Home() {
               <button
                 onClick={handlePlay}
                 disabled={loading}
-                className="h-14 px-7 rounded-xl font-medium transition-all relative overflow-hidden group"
+                className="h-14 px-7 rounded-xl font-medium transition-all relative overflow-hidden group w-full sm:w-auto"
                 style={{
                   background: loading ? 'rgba(0,245,196,0.2)' : '#00f5c4',
                   color: '#050508',
                   fontFamily: 'var(--font-display)',
                   letterSpacing: '0.08em',
                   fontSize: '16px',
-                  minWidth: '120px',
+                  minWidth: '140px',
                 }}>
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   {loading ? (
@@ -497,7 +497,17 @@ export default function Home() {
               {history.length > 0 && !meta && (
                 <button
                   onClick={() => setShowHistory(!showHistory)}
-                  className="h-14 px-4 rounded-xl transition-all"
+                  className="h-14 px-4 rounded-xl transition-all sm:hidden"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#8888aa' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mx-auto">
+                    <path d="M12 8v4l3 3" /><circle cx="12" cy="12" r="10" />
+                  </svg>
+                </button>
+              )}
+              {history.length > 0 && !meta && (
+                <button
+                  onClick={() => setShowHistory(!showHistory)}
+                  className="h-14 px-4 rounded-xl transition-all hidden sm:block"
                   style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#8888aa' }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 8v4l3 3" /><circle cx="12" cy="12" r="10" />
