@@ -5,6 +5,7 @@ import { resolveUrl, VideoMeta, PLATFORM_CONFIG } from '@/lib/resolver'
 import VideoPlayer from '@/components/VideoPlayer'
 import HistoryPanel from '@/components/HistoryPanel'
 import AffiliateBanner from '@/components/AffiliateBanner'
+import LanguageSelector, { LANGUAGES } from '@/components/LanguageSelector'
 
 const SUPPORTED_PLATFORMS = [
   { name: 'YouTube', color: '#ff0000' },
@@ -86,6 +87,190 @@ const TRANSLATIONS: any = {
     statsActive: 'एक्टिव यूजर्स',
     statsFree: 'हमेशा फ्री',
     back: 'स्ट्रीमवॉल्ट'
+  },
+  es: {
+    tagline: 'Pega cualquier enlace de video desde cualquier lugar — míralo al instante, sin distracciones',
+    placeholder: 'Pega cualquier enlace de video — YouTube, Vimeo, Twitch, Dailymotion y más...',
+    play: 'REPRODUCIR',
+    history: 'Historial',
+    newVideo: 'Nuevo Video',
+    copyLink: 'Copiar Enlace',
+    openOriginal: 'Abrir Original',
+    save: 'Guardar',
+    share: 'Compartir con amigos',
+    howItWorks: 'Cómo funciona',
+    step1Title: 'Pega tu Enlace',
+    step1Desc: 'YouTube, Vimeo, Twitch, Dailymotion o cualquier URL directa',
+    step2Title: 'Auto Detectado',
+    step2Desc: 'La plataforma se detecta automáticamente',
+    step3Title: 'Mira y Disfruta',
+    step3Desc: 'Disfruta de tu video en un reproductor limpio',
+    statsSupported: 'Plataformas',
+    statsDownloads: 'Descargas Totales',
+    statsActive: 'Usuarios Activos',
+    statsFree: 'Gratis Siempre',
+    back: 'STREAMVAULT'
+  },
+  fr: {
+    tagline: 'Collez n\'importe quel lien vidéo de n\'importe où — regardez-le instantanément, sans distraction',
+    placeholder: 'Collez un lien vidéo — YouTube, Vimeo, Twitch, Dailymotion et plus...',
+    play: 'LIRE',
+    history: 'Historique',
+    newVideo: 'Nouvelle Vidéo',
+    copyLink: 'Copier le Lien',
+    openOriginal: 'Ouvrir l\'Original',
+    save: 'Enregistrer',
+    share: 'Partager avec des amis',
+    howItWorks: 'Comment ça marche',
+    step1Title: 'Collez votre Lien',
+    step1Desc: 'YouTube, Vimeo, Twitch, Dailymotion ou toute URL directe',
+    step2Title: 'Auto Détecté',
+    step2Desc: 'La plateforme est détectée automatiquement',
+    step3Title: 'Regardez et Profitez',
+    step3Desc: 'Profitez de votre vidéo dans un lecteur propre',
+    statsSupported: 'Plateformes',
+    statsDownloads: 'Téléchargements',
+    statsActive: 'Utilisateurs Actifs',
+    statsFree: 'Gratuit Toujours',
+    back: 'STREAMVAULT'
+  },
+  de: {
+    tagline: 'Fügen Sie einen Videolink ein — schauen Sie sofort, ohne Ablenkungen',
+    placeholder: 'Videolink einfügen — YouTube, Vimeo, Twitch, Dailymotion und mehr...',
+    play: 'ABSPIELEN',
+    history: 'Verlauf',
+    newVideo: 'Neues Video',
+    copyLink: 'Link Kopieren',
+    openOriginal: 'Original Öffnen',
+    save: 'Speichern',
+    share: 'Mit Freunden teilen',
+    howItWorks: 'Wie es funktioniert',
+    step1Title: 'Link Einfügen',
+    step1Desc: 'YouTube, Vimeo, Twitch, Dailymotion oder direkte URL',
+    step2Title: 'Auto-Erkennung',
+    step2Desc: 'Plattform wird automatisch erkannt',
+    step3Title: 'Ansehen & Genießen',
+    step3Desc: 'Genießen Sie Ihr Video in einem sauberen Player',
+    statsSupported: 'Plattformen',
+    statsDownloads: 'Downloads Gesamt',
+    statsActive: 'Aktive Nutzer',
+    statsFree: 'Immer Kostenlos',
+    back: 'STREAMVAULT'
+  },
+  ar: {
+    tagline: 'الصق أي رابط فيديو من أي مكان - شاهده على الفور ، دون تشتيت الانتباه',
+    placeholder: 'الصق أي رابط فيديو - YouTube و Vimeo و Twitch و Dailymotion والمزيد...',
+    play: 'تشغيل',
+    history: 'السجل',
+    newVideo: 'فيديو جديد',
+    copyLink: 'نسخ الرابط',
+    openOriginal: 'فتح الأصلي',
+    save: 'حفظ',
+    share: 'شارك مع الأصدقاء',
+    howItWorks: 'كيف يعمل',
+    step1Title: 'الصق الرابط الخاص بك',
+    step1Desc: 'YouTube أو Vimeo أو Twitch أو Dailymotion أو أي رابط مباشر',
+    step2Title: 'اكتشاف تلقائي',
+    step2Desc: 'يتم اكتشاف المنصة تلقائيًا - لا يلزم ضبط إعدادات',
+    step3Title: 'شاهد واستمتع',
+    step3Desc: 'استمتع بالفيديو الخاص بك في مشغل نظيف وخالٍ من التشتت',
+    statsSupported: 'المنصات المدعومة',
+    statsDownloads: 'إجمالي التحميلات',
+    statsActive: 'المستخدمين النشطين',
+    statsFree: 'مجاني للأبد',
+    back: 'ستريم فولت'
+  },
+  pt: {
+    tagline: 'Cole qualquer link de vídeo de qualquer lugar — assista instantaneamente, sem distrações',
+    placeholder: 'Cole qualquer link de vídeo — YouTube, Vimeo, Twitch, Dailymotion e mais...',
+    play: 'REPRODUZIR',
+    history: 'Histórico',
+    newVideo: 'Novo Vídeo',
+    copyLink: 'Copiar Link',
+    openOriginal: 'Abrir Original',
+    save: 'Salvar',
+    share: 'Compartilhar com amigos',
+    howItWorks: 'Como funciona',
+    step1Title: 'Cole seu Link',
+    step1Desc: 'YouTube, Vimeo, Twitch, Dailymotion ou qualquer URL direta',
+    step2Title: 'Auto Detectado',
+    step2Desc: 'Plataforma detectada automaticamente',
+    step3Title: 'Assista e Aproveite',
+    step3Desc: 'Aproveite seu vídeo em um player limpo',
+    statsSupported: 'Plataformas',
+    statsDownloads: 'Total de Downloads',
+    statsActive: 'Usuários Ativos',
+    statsFree: 'Grátis Sempre',
+    back: 'STREAMVAULT'
+  },
+  ru: {
+    tagline: 'Вставьте любую ссылку на видео — смотрите мгновенно, без рекламы',
+    placeholder: 'Вставьте ссылку на видео — YouTube, Vimeo, Twitch, Dailymotion и др.',
+    play: 'ИГРАТЬ',
+    history: 'История',
+    newVideo: 'Новое видео',
+    copyLink: 'Копировать',
+    openOriginal: 'Открыть оригинал',
+    save: 'Сохранить',
+    share: 'Поделиться',
+    howItWorks: 'Как это работает',
+    step1Title: 'Вставьте ссылку',
+    step1Desc: 'YouTube, Vimeo, Twitch, Dailymotion или прямая ссылка',
+    step2Title: 'Автоопределение',
+    step2Desc: 'Платформа определяется автоматически',
+    step3Title: 'Смотрите и наслаждайтесь',
+    step3Desc: 'Наслаждайтесь видео в чистом плеере',
+    statsSupported: 'Платформы',
+    statsDownloads: 'Всего скачиваний',
+    statsActive: 'Активные пользователи',
+    statsFree: 'Всегда бесплатно',
+    back: 'STREAMVAULT'
+  },
+  ja: {
+    tagline: 'どこからでもビデオリンクを貼り付けます — すぐに、気を散らすことなく視聴できます',
+    placeholder: 'ビデオリンクを貼り付け — YouTube、Vimeo、Twitch, Dailymotionなど...',
+    play: '再生',
+    history: '履歴',
+    newVideo: '新しいビデオ',
+    copyLink: 'リンクをコピー',
+    openOriginal: 'オリジナルを開く',
+    save: '保存',
+    share: '友達と共有',
+    howItWorks: '使い方',
+    step1Title: 'リンクを貼り付け',
+    step1Desc: 'YouTube, Vimeo, Twitch, または直接の動画URL',
+    step2Title: '自動検出',
+    step2Desc: 'プラットフォームは自動的に検出されます',
+    step3Title: '見て楽しむ',
+    step3Desc: 'クリーンなプレーヤーでビデオをお楽しみください',
+    statsSupported: '対応プラットフォーム',
+    statsDownloads: '総ダウンロード数',
+    statsActive: 'アクティブユーザー',
+    statsFree: '永久無料',
+    back: 'ストリームヴォルト'
+  },
+  it: {
+    tagline: 'Incolla qualsiasi link video da qualsiasi luogo — guardalo istantaneamente, senza distrazioni',
+    placeholder: 'Incolla link video — YouTube, Vimeo, Twitch, Dailymotion e altro...',
+    play: 'PLAY',
+    history: 'Cronologia',
+    newVideo: 'Nuovo Video',
+    copyLink: 'Copia Link',
+    openOriginal: 'Apri Originale',
+    save: 'Salva',
+    share: 'Condividi con amici',
+    howItWorks: 'Come funziona',
+    step1Title: 'Incolla il Link',
+    step1Desc: 'YouTube, Vimeo, Twitch, Dailymotion o qualsiasi URL diretto',
+    step2Title: 'Auto Rilevato',
+    step2Desc: 'La piattaforma viene rilevata automaticamente',
+    step3Title: 'Guarda e Divertiti',
+    step3Desc: 'Goditi il tuo video in un player pulito',
+    statsSupported: 'Piattaforme',
+    statsDownloads: 'Download Totali',
+    statsActive: 'Utenti Attivi',
+    statsFree: 'Sempre Gratis',
+    back: 'STREAMVAULT'
   }
 }
 
@@ -97,10 +282,10 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [showHistory, setShowHistory] = useState(false)
-  const [lang, setLang] = useState<'en' | 'ur' | 'hi'>('en')
+  const [lang, setLang] = useState<string>('en')
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const t = TRANSLATIONS[lang]
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en
 
   // Load history from localStorage
   useEffect(() => {
@@ -164,7 +349,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen grid-bg relative">
+      <LanguageSelector current={lang} onChange={setLang} />
+      <div className="min-h-screen grid-bg relative" style={{ direction: (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr' }}>
 
         {/* ── Ambient orbs ─────────────────────────────────── */}
         <div className="fixed top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
@@ -179,18 +365,6 @@ export default function Home() {
           {/* ── Header ─────────────────────────────────────── */}
           {!meta && (
             <header className="text-center mb-16 animate-float">
-              {/* Language Switcher */}
-              <div className="flex justify-center gap-2 mb-8">
-                {['en', 'ur', 'hi'].map((l) => (
-                  <button
-                    key={l}
-                    onClick={() => setLang(l as any)}
-                    className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${lang === l ? 'bg-[#00f5c4] text-[#050508]' : 'bg-white/5 text-ghost border border-white/10 hover:border-white/30'}`}
-                  >
-                    {l === 'en' ? 'English' : l === 'ur' ? 'اردو' : 'हिंदी'}
-                  </button>
-                ))}
-              </div>
 
               {/* Logo mark */}
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl mb-6 relative group"
@@ -245,17 +419,6 @@ export default function Home() {
               </button>
 
               <div className="flex items-center gap-2">
-                <div className="flex bg-white/5 rounded-lg p-1 border border-white/10 mr-2">
-                  {['en', 'ur', 'hi'].map((l) => (
-                    <button
-                      key={l}
-                      onClick={() => setLang(l as any)}
-                      className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase transition-all ${lang === l ? 'bg-[#00f5c4] text-[#050508]' : 'text-ghost hover:text-white'}`}
-                    >
-                      {l}
-                    </button>
-                  ))}
-                </div>
                 <button
                   onClick={() => setShowHistory(!showHistory)}
                   className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all"
@@ -286,7 +449,7 @@ export default function Home() {
                     background: 'rgba(255,255,255,0.04)',
                     border: '1px solid rgba(255,255,255,0.1)',
                     fontFamily: 'var(--font-body)',
-                    direction: lang === 'ur' ? 'rtl' : 'ltr'
+                    direction: (lang === 'ur' || lang === 'ar') ? 'rtl' : 'ltr'
                   }}
                   autoFocus
                 />
