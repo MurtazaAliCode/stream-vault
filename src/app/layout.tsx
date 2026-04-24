@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     siteName: 'StreamVault',
     type: 'website',
   },
+  verification: {
+    google: 'google8b2069e95f040ad1',
+  },
 }
 
 export default function RootLayout({
