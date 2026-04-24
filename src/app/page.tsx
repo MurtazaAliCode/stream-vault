@@ -17,6 +17,79 @@ const SUPPORTED_PLATFORMS = [
   { name: '+ More', color: '#ff6b35' },
 ]
 
+const TRANSLATIONS: any = {
+  en: {
+    tagline: 'Paste any video link from anywhere — watch it instantly, distraction-free',
+    placeholder: 'Paste any video link — YouTube, Vimeo, Twitch, Dailymotion, and more...',
+    play: 'PLAY',
+    history: 'History',
+    newVideo: 'New Video',
+    copyLink: 'Copy Link',
+    openOriginal: 'Open Original',
+    save: 'Save',
+    share: 'Share with friends',
+    howItWorks: 'How it works',
+    step1Title: 'Paste Your Link',
+    step1Desc: 'YouTube, Vimeo, Twitch, Dailymotion, or any direct video URL',
+    step2Title: 'Auto Detected',
+    step2Desc: 'Platform is detected automatically — no settings required',
+    step3Title: 'Watch & Enjoy',
+    step3Desc: 'Enjoy your video in a clean, distraction-free player',
+    statsSupported: 'Supported Platforms',
+    statsDownloads: 'Total Downloads',
+    statsActive: 'Active Users',
+    statsFree: 'Free Forever',
+    back: 'STREAMVAULT'
+  },
+  ur: {
+    tagline: 'کہیں سے بھی ویڈیو لنک پیسٹ کریں — فوراً دیکھیں، بغیر کسی رکاوٹ کے',
+    placeholder: 'ویڈیو لنک پیسٹ کریں — یوٹیوب، ویمیو، ٹویچ، ڈیلی موشن اور مزید...',
+    play: 'چلائیں',
+    history: 'تاریخ',
+    newVideo: 'نئی ویڈیو',
+    copyLink: 'لنک کاپی',
+    openOriginal: 'اصل دیکھیں',
+    save: 'محفوظ',
+    share: 'دوستوں کے ساتھ شیئر کریں',
+    howItWorks: 'یہ کیسے کام کرتا ہے',
+    step1Title: 'لنک پیسٹ کریں',
+    step1Desc: 'یوٹیوب، ویمیو، ٹویچ، یا کوئی بھی ڈائریکٹ ویڈیو لنک',
+    step2Title: 'خودکار تشخیص',
+    step2Desc: 'پلیٹ فارم خود بخود پہچان لیا جاتا ہے',
+    step3Title: 'دیکھیں اور لطف اٹھائیں',
+    step3Desc: 'ایک صاف اور بہتر پلیئر میں ویڈیو کا لطف لیں',
+    statsSupported: 'سپورٹڈ پلیٹ فارمز',
+    statsDownloads: 'کل ڈاؤن لوڈز',
+    statsActive: 'ایکٹو صارفین',
+    statsFree: 'ہمیشہ مفت',
+    back: 'اسٹریم والٹ'
+  },
+  hi: {
+    tagline: 'कहीं से भी वीडियो लिंक पेस्ट करें — तुरंत देखें, बिना किसी रुकावट के',
+    placeholder: 'वीडियो लिंक पेस्ट करें — YouTube, Vimeo, Twitch, Dailymotion और अधिक...',
+    play: 'चलाएं',
+    history: 'इतिहास',
+    newVideo: 'नई वीडियो',
+    copyLink: 'लिंक कॉपी',
+    openOriginal: 'ओरिजिनल देखें',
+    save: 'सहेजें',
+    share: 'दोस्तों के साथ साझा करें',
+    howItWorks: 'यह कैसे काम करता है',
+    step1Title: 'लिंक पेस्ट करें',
+    step1Desc: 'YouTube, Vimeo, Twitch, या कोई भी डायरेक्ट वीडियो लिंक',
+    step2Title: 'ऑटो डिटेक्टेड',
+    step2Desc: 'प्लेटफॉर्म स्वचालित रूप से पहचाना जाता है',
+    step3Title: 'देखें और आनंद लें',
+    step3Desc: 'एक साफ और बेहतर प्लेयर में वीडियो का आनंद लें',
+    statsSupported: 'सपोर्टेड प्लेटफॉर्म',
+    statsDownloads: 'कुल डाउनलोड',
+    statsActive: 'एक्टिव यूजर्स',
+    statsFree: 'हमेशा फ्री',
+    back: 'स्ट्रीमवॉल्ट'
+  }
+}
+
+
 export default function Home() {
   const [url, setUrl] = useState('')
   const [meta, setMeta] = useState<VideoMeta | null>(null)
@@ -24,7 +97,10 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [showHistory, setShowHistory] = useState(false)
+  const [lang, setLang] = useState<'en' | 'ur' | 'hi'>('en')
   const inputRef = useRef<HTMLInputElement>(null)
+
+  const t = TRANSLATIONS[lang]
 
   // Load history from localStorage
   useEffect(() => {
@@ -103,6 +179,19 @@ export default function Home() {
           {/* ── Header ─────────────────────────────────────── */}
           {!meta && (
             <header className="text-center mb-16 animate-float">
+              {/* Language Switcher */}
+              <div className="flex justify-center gap-2 mb-8">
+                {['en', 'ur', 'hi'].map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => setLang(l as any)}
+                    className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${lang === l ? 'bg-[#00f5c4] text-[#050508]' : 'bg-white/5 text-ghost border border-white/10 hover:border-white/30'}`}
+                  >
+                    {l === 'en' ? 'English' : l === 'ur' ? 'اردو' : 'हिंदी'}
+                  </button>
+                ))}
+              </div>
+
               {/* Logo mark */}
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl mb-6 relative group"
                 style={{ background: 'linear-gradient(135deg, rgba(0,245,196,0.1), rgba(0,245,196,0.02))', border: '1px solid rgba(0,245,196,0.2)' }}>
@@ -120,14 +209,14 @@ export default function Home() {
               </div>
 
               <h1 style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.04em' }}
-                className="text-6xl md:text-8xl text-white mb-3 tracking-tighter">
-                STREAM<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5c4] to-[#00d1a7]">VAULT</span>
+                className="text-6xl md:text-8xl text-white mb-3 tracking-tighter uppercase">
+                {lang === 'en' ? 'STREAM' : ''}<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5c4] to-[#00d1a7]">{lang === 'en' ? 'VAULT' : t.back}</span>
               </h1>
 
               <p className="text-ghost text-lg md:text-xl font-light max-w-md mx-auto leading-relaxed">
-                Paste any video link from anywhere —<br />
-                <span style={{ color: '#e8e8f0' }}>watch it instantly, distraction-free</span>
+                {t.tagline}
               </p>
+
 
               {/* Supported platforms */}
               <div className="flex flex-wrap justify-center gap-2 mt-8">
@@ -150,20 +239,34 @@ export default function Home() {
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
                 <span style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.08em', fontSize: '18px' }}
-                  className="group-hover:text-white transition-colors">
-                  STREAM<span style={{ color: '#00f5c4' }}>VAULT</span>
+                  className="group-hover:text-white transition-colors uppercase">
+                  {lang === 'en' ? 'STREAM' : ''}<span style={{ color: '#00f5c4' }}>{lang === 'en' ? 'VAULT' : t.back}</span>
                 </span>
               </button>
 
-              <button
-                onClick={() => setShowHistory(!showHistory)}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#8888aa' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 8v4l3 3" /><circle cx="12" cy="12" r="10" />
-                </svg>
-                History
-              </button>
+              <div className="flex items-center gap-2">
+                <div className="flex bg-white/5 rounded-lg p-1 border border-white/10 mr-2">
+                  {['en', 'ur', 'hi'].map((l) => (
+                    <button
+                      key={l}
+                      onClick={() => setLang(l as any)}
+                      className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase transition-all ${lang === l ? 'bg-[#00f5c4] text-[#050508]' : 'text-ghost hover:text-white'}`}
+                    >
+                      {l}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={() => setShowHistory(!showHistory)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#8888aa' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 8v4l3 3" /><circle cx="12" cy="12" r="10" />
+                  </svg>
+                  {t.history}
+                </button>
+              </div>
+
             </div>
           )}
 
@@ -177,12 +280,13 @@ export default function Home() {
                   value={url}
                   onChange={e => { setUrl(e.target.value); setError('') }}
                   onKeyDown={handleKeyDown}
-                  placeholder="Paste any video link — YouTube, Vimeo, Twitch, Dailymotion, and more..."
+                  placeholder={t.placeholder}
                   className="url-input w-full h-14 px-5 pr-12 rounded-xl text-white placeholder-ghost font-light text-sm md:text-base transition-all"
                   style={{
                     background: 'rgba(255,255,255,0.04)',
                     border: '1px solid rgba(255,255,255,0.1)',
                     fontFamily: 'var(--font-body)',
+                    direction: lang === 'ur' ? 'rtl' : 'ltr'
                   }}
                   autoFocus
                 />
@@ -214,14 +318,14 @@ export default function Home() {
                       <svg className="animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M21 12a9 9 0 11-6.219-8.56" />
                       </svg>
-                      Loading
+                      ...
                     </>
                   ) : (
                     <>
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                         <polygon points="5,3 19,12 5,21" />
                       </svg>
-                      PLAY
+                      {t.play}
                     </>
                   )}
                 </span>
@@ -289,7 +393,7 @@ export default function Home() {
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="9" y="9" width="13" height="13" rx="2" /><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
                   </svg>
-                  Copy Link
+                  {t.copyLink}
                 </button>
 
                 <a href={meta.originalUrl} target="_blank" rel="noopener noreferrer"
@@ -298,7 +402,7 @@ export default function Home() {
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
-                  Open Original
+                  {t.openOriginal}
                 </a>
 
                 {/* Save Button (Replacing Download) */}
@@ -309,7 +413,7 @@ export default function Home() {
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                   </svg>
-                  Save
+                  {t.save}
                 </button>
 
                 <button onClick={handleClear}
@@ -318,13 +422,13 @@ export default function Home() {
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
                   </svg>
-                  New Video
+                  {t.newVideo}
                 </button>
               </div>
 
               {/* Social Share Buttons */}
               <div className="mt-8 pt-6 border-t border-white/5">
-                <div className="text-xs text-ghost uppercase tracking-widest mb-4 font-semibold opacity-50">Share with friends</div>
+                <div className="text-xs text-ghost uppercase tracking-widest mb-4 font-semibold opacity-50">{t.share}</div>
                 <div className="flex flex-wrap gap-3">
                   <button 
                     onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent('Check out this awesome video on StreamVault: ' + meta.originalUrl)}`, '_blank')}
@@ -360,9 +464,9 @@ export default function Home() {
             <>
               <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
-                  { num: '01', title: 'Paste Your Link', desc: 'YouTube, Vimeo, Twitch, Dailymotion, or any direct video URL', color: '#00f5c4' },
-                  { num: '02', title: 'Auto Detected', desc: 'Platform is detected automatically — no settings required', color: '#a78bfa' },
-                  { num: '03', title: 'Watch & Enjoy', desc: 'Enjoy your video in a clean, distraction-free player', color: '#ff6b35' },
+                  { num: '01', title: t.step1Title, desc: t.step1Desc, color: '#00f5c4' },
+                  { num: '02', title: t.step2Title, desc: t.step2Desc, color: '#a78bfa' },
+                  { num: '03', title: t.step3Title, desc: t.step3Desc, color: '#ff6b35' },
                 ].map(step => (
                   <div key={step.num}
                     className="p-6 rounded-2xl animated-border relative overflow-hidden"
@@ -382,10 +486,10 @@ export default function Home() {
               {/* ── Stats Section ──────────────────────────────────── */}
               <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 {[
-                  { label: 'Supported Platforms', value: '10+' },
-                  { label: 'Total Downloads', value: '1.2M+' },
-                  { label: 'Active Users', value: '50K+' },
-                  { label: 'Free Forever', value: '100%' },
+                  { label: t.statsSupported, value: '10+' },
+                  { label: t.statsDownloads, value: '1.2M+' },
+                  { label: t.statsActive, value: '50K+' },
+                  { label: t.statsFree, value: '100%' },
                 ].map(stat => (
                   <div key={stat.label} className="p-6 rounded-2xl transition-all hover:-translate-y-1" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)' }}>
                     <div className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>{stat.value}</div>
@@ -407,9 +511,11 @@ export default function Home() {
               </span>
               
               <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-[11px] uppercase tracking-[0.2em] font-bold">
-                <a href="/privacy" className="text-ghost hover:text-[#00f5c4] transition-all duration-300">Privacy Policy</a>
-                <a href="/terms" className="text-ghost hover:text-[#00f5c4] transition-all duration-300">Terms of Service</a>
-                <a href="mailto:contact@streamvault.com" className="text-ghost hover:text-[#00f5c4] transition-all duration-300">Contact</a>
+                <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+                <span style={{ color: '#1a1a28' }}>·</span>
+                <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+                <span style={{ color: '#1a1a28' }}>·</span>
+                <a href="/contact" className="hover:text-white transition-colors">Contact Us</a>
               </div>
 
               <div className="h-px w-12 bg-white/10" />
