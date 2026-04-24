@@ -32,6 +32,18 @@ export const metadata: Metadata = {
   verification: {
     google: 'google8b2069e95f040ad1',
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'StreamVault',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+}
+
+export const viewport = {
+  themeColor: '#00f5c4',
 }
 
 export default function RootLayout({
