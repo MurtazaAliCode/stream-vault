@@ -11,7 +11,13 @@ export default function PromotionalToast({ message }: Props) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Show after 3 seconds
+    // Check if app is already running in standalone mode (installed)
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
+                        (window.navigator as any).standalone === true;
+    
+    if (isStandalone) return;
+
+    // Show after 3 seconds if NOT standalone
     const timer = setTimeout(() => setIsVisible(true), 3000)
     return () => clearTimeout(timer)
   }, [])
