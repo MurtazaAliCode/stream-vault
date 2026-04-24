@@ -107,18 +107,24 @@ export default function Home() {
           {!meta && (
             <header className="text-center mb-16 animate-float">
               {/* Logo mark */}
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 relative"
-                style={{ background: 'rgba(0,245,196,0.08)', border: '1px solid rgba(0,245,196,0.2)' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                  <polygon points="5,3 19,12 5,21" fill="#00f5c4" />
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl mb-6 relative group"
+                style={{ background: 'linear-gradient(135deg, rgba(0,245,196,0.1), rgba(0,245,196,0.02))', border: '1px solid rgba(0,245,196,0.2)' }}>
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" className="relative z-10 drop-shadow-[0_0_8px_rgba(0,245,196,0.5)]">
+                  <path d="M5 3L19 12L5 21V3Z" fill="url(#logo-grad)" />
+                  <defs>
+                    <linearGradient id="logo-grad" x1="5" y1="3" x2="19" y2="12" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#00f5c4" />
+                      <stop offset="1" stopColor="#00d1a7" />
+                    </linearGradient>
+                  </defs>
                 </svg>
-                <div className="absolute inset-0 rounded-2xl plasma-glow" />
+                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 plasma-glow" />
+                <div className="absolute -inset-1 bg-[#00f5c4] blur-2xl opacity-10 rounded-full" />
               </div>
 
               <h1 style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.04em' }}
-                className="text-6xl md:text-8xl text-white mb-3">
-                STREAM
-                <span style={{ color: '#00f5c4' }}>VAULT</span>
+                className="text-6xl md:text-8xl text-white mb-3 tracking-tighter">
+                STREAM<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5c4] to-[#00d1a7]">VAULT</span>
               </h1>
 
               <p className="text-ghost text-lg md:text-xl font-light max-w-md mx-auto leading-relaxed">
@@ -319,6 +325,31 @@ export default function Home() {
                 </button>
               </div>
 
+              {/* Social Share Buttons */}
+              <div className="mt-8 pt-6 border-t border-white/5">
+                <div className="text-xs text-ghost uppercase tracking-widest mb-4 font-semibold opacity-50">Share with friends</div>
+                <div className="flex flex-wrap gap-3">
+                  <button 
+                    onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent('Check out this awesome video on StreamVault: ' + meta.originalUrl)}`, '_blank')}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium transition-all hover:scale-105 active:scale-95"
+                    style={{ background: 'rgba(37, 211, 102, 0.1)', border: '1px solid rgba(37, 211, 102, 0.2)', color: '#25D366' }}>
+                    WhatsApp
+                  </button>
+                  <button 
+                    onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Watching this on StreamVault: ' + meta.originalUrl)}`, '_blank')}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium transition-all hover:scale-105 active:scale-95"
+                    style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: '#fff' }}>
+                    Twitter / X
+                  </button>
+                  <button 
+                    onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(meta.originalUrl)}`, '_blank')}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium transition-all hover:scale-105 active:scale-95"
+                    style={{ background: 'rgba(24, 119, 242, 0.1)', border: '1px solid rgba(24, 119, 242, 0.2)', color: '#1877F2' }}>
+                    Facebook
+                  </button>
+                </div>
+              </div>
+
               {/* Affiliate Banners */}
               <div className="mt-5 flex flex-col gap-2">
                 <AffiliateBanner variant="nordvpn" />
@@ -371,16 +402,24 @@ export default function Home() {
         </div>
 
         {/* ── Footer ─────────────────────────────────────────── */}
-        {!meta && (
-          <footer className="text-center py-8 text-ghost text-xs"
+        <footer className="text-center py-12 text-ghost text-xs mt-10"
             style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-            <span style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.1em', color: '#333348' }}>
-              STREAMVAULT
-            </span>
-            <span className="mx-3" style={{ color: '#1a1a28' }}>·</span>
-            <span>Universal video player</span>
+            <div className="flex flex-col items-center gap-6">
+              <span style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.1em', color: '#444460' }}>
+                STREAMVAULT
+              </span>
+              
+              <div className="flex items-center gap-6 text-[10px] uppercase tracking-widest font-medium">
+                <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+                <span style={{ color: '#1a1a28' }}>·</span>
+                <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+                <span style={{ color: '#1a1a28' }}>·</span>
+                <a href="mailto:contact@streamvault.com" className="hover:text-white transition-colors">Contact</a>
+              </div>
+
+              <span className="opacity-30">© 2026 StreamVault · Universal video player</span>
+            </div>
           </footer>
-        )}
 
       </div>
     </>
