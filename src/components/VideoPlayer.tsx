@@ -29,13 +29,16 @@ export default function VideoPlayer({ meta }: Props) {
       iframeUrl += '&cc_load_policy=1&cc_lang_pref=en'
     }
 
+    const isPortrait = meta.platform === 'tiktok' || meta.platform === 'instagram'
+    const wrapperClass = `video-wrapper ${isPortrait ? 'portrait' : ''}`
+
     return (
       <div className="relative rounded-2xl overflow-hidden"
         style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
 
         {/* Loading skeleton */}
         {!loaded && (
-          <div className="video-wrapper shimmer rounded-2xl">
+          <div className={`${wrapperClass} shimmer rounded-2xl`}>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="flex flex-col items-center gap-3">
                 <svg className="animate-spin" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00f5c4" strokeWidth="1.5">
@@ -47,7 +50,7 @@ export default function VideoPlayer({ meta }: Props) {
           </div>
         )}
 
-        <div className="video-wrapper" style={{ display: loaded ? 'block' : 'none' }}>
+        <div className={wrapperClass} style={{ display: loaded ? 'block' : 'none' }}>
           <iframe
             ref={iframeRef}
             src={iframeUrl}
@@ -87,12 +90,15 @@ export default function VideoPlayer({ meta }: Props) {
 
   // ── React Player (direct files, Twitter, TikTok) ───────────────────────────
   if (meta.playerType === 'react-player') {
+    const isPortrait = meta.platform === 'tiktok' || meta.platform === 'instagram'
+    const wrapperClass = `video-wrapper ${isPortrait ? 'portrait' : ''}`
+
     return (
       <div className="relative rounded-2xl overflow-hidden"
         style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
 
         {!loaded && !error && (
-          <div className="video-wrapper shimmer rounded-2xl">
+          <div className={`${wrapperClass} shimmer rounded-2xl`}>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="flex flex-col items-center gap-3">
                 <svg className="animate-spin" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00f5c4" strokeWidth="1.5">
@@ -109,7 +115,7 @@ export default function VideoPlayer({ meta }: Props) {
         )}
 
         {!error && (
-          <div className="video-wrapper" style={{ display: loaded ? 'block' : 'none' }}>
+          <div className={wrapperClass} style={{ display: loaded ? 'block' : 'none' }}>
             <ReactPlayer
               url={meta.originalUrl}
               playing={false}

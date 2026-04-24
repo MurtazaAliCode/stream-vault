@@ -147,7 +147,8 @@ function parseStreamable(url: string): VideoMeta | null {
 
 // ─── Facebook ────────────────────────────────────────────────────────────────
 function parseFacebook(url: string): VideoMeta | null {
-  if (url.includes('facebook.com') && url.includes('/videos/')) {
+  const match = url.match(/(?:facebook\.com|fb\.watch)\/.*(?:videos\/|v=|\/)([a-zA-Z0-9_-]+)/)
+  if (url.includes('facebook.com') || url.includes('fb.watch')) {
     return {
       platform: 'facebook', originalUrl: url,
       embedUrl: `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&autoplay=true`,
@@ -171,8 +172,9 @@ function parseDirectVideo(url: string): VideoMeta | null {
   return null
 }
 
-// ─── Instagram / TikTok (limited — no direct embed support) ──────────────────
+// ─── Instagram / TikTok (Enhanced Support) ───────────────────────────────────
 function parseSocial(url: string): VideoMeta | null {
+  // Instagram
   if (url.includes('instagram.com')) {
     const match = url.match(/instagram\.com\/(?:p|reel|tv)\/([a-zA-Z0-9_-]+)/)
     if (match) {
@@ -184,7 +186,20 @@ function parseSocial(url: string): VideoMeta | null {
       }
     }
   }
+
+  // TikTok
   if (url.includes('tiktok.com')) {
+    const videoIdMatch = url.match(/\/video\/(\d+)/)
+    if (videoIdMatch) {
+      const id = videoIdMatch[1]
+      return {
+        platform: 'tiktok', originalUrl: url,
+        embedUrl: `https://www.tiktok.com/embed/v2/${id}`,
+        videoId: id, title: 'TikTok Video',
+        thumbnail: null, canEmbed: true, playerType: 'iframe',
+      }
+    }
+    // Fallback for tiktok share links
     return {
       platform: 'tiktok', originalUrl: url,
       embedUrl: url, videoId: null,

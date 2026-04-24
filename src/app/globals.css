@@ -106,6 +106,10 @@ body {
   border-radius: 12px;
 }
 
+.video-wrapper.portrait {
+  padding-bottom: 177.77%; /* 9:16 */
+}
+
 .video-wrapper iframe,
 .video-wrapper video,
 .video-wrapper > div {
