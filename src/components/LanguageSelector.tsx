@@ -39,13 +39,13 @@ export default function LanguageSelector({ current, onChange }: Props) {
   }, [])
 
   return (
-    <div ref={containerRef} className="fixed top-6 right-6 z-50">
+    <div ref={containerRef} className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all text-white text-sm font-medium shadow-2xl"
+        className="flex items-center gap-1.5 md:gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all text-white text-xs md:text-sm font-medium shadow-2xl"
       >
-        <span className="text-lg">{currentLang.flag}</span>
-        <span className="hidden md:inline uppercase tracking-widest">{currentLang.name}</span>
+        <span className="text-base md:text-lg">{currentLang.flag}</span>
+        <span className="hidden sm:inline uppercase tracking-widest">{currentLang.name}</span>
         <svg 
           width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
           className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
