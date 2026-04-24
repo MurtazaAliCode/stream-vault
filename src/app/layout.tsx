@@ -54,6 +54,8 @@ export const viewport = {
   userScalable: false,
 }
 
+import { Analytics } from '@vercel/analytics/react'
+
 export default function RootLayout({
   children,
 }: {
@@ -65,6 +67,7 @@ export default function RootLayout({
         <CustomCursor />
         <AdBlockDetector />
         {children}
+        <Analytics />
         <script
           dangerouslySetInnerHTML={{
             __html: `
