@@ -48,7 +48,7 @@ export default function AffiliateBanner({ variant = 'nordvpn', placement = 'inli
   // Movavi variant
   return (
     <a
-      href="https://www.mvvitrk.com/click?pid=6156&offer_id=9"
+      href="https://www.mvvitrk.com/click?pid=6156&offer_id=9&sub1=streamvault"
       target="_blank"
       rel="noopener noreferrer sponsored"
       className="flex items-center gap-4 w-full rounded-xl px-4 py-3 transition-all group"
