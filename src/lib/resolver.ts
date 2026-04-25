@@ -23,7 +23,7 @@ export interface VideoMeta {
   title: string
   thumbnail: string | null
   canEmbed: boolean
-  playerType: 'iframe' | 'react-player' | 'video-tag'
+  playerType: 'iframe' | 'react-player' | 'video-tag' | 'facebook-card'
 }
 
 // ─── YouTube ────────────────────────────────────────────────────────────────
@@ -146,13 +146,25 @@ function parseStreamable(url: string): VideoMeta | null {
 }
 
 // ─── Facebook ────────────────────────────────────────────────────────────────
+// NOTE: Facebook blocks iframe embedding via X-Frame-Options on most browsers.
+// We use a special 'facebook-card' playerType that shows a clickable preview card
+// instead of a broken iframe.
 function parseFacebook(url: string): VideoMeta | null {
-  const match = url.match(/(?:facebook\.com|fb\.watch)\/.*(?:videos\/|v=|\/)([a-zA-Z0-9_-]+)/)
   if (url.includes('facebook.com') || url.includes('fb.watch')) {
+    // Try to extract video ID for thumbnail
+    const idMatch = url.match(/\/videos\/(\d+)/) || url.match(/[?&]v=(\d+)/) || url.match(/fb\.watch\/([a-zA-Z0-9_-]+)/)
+    const videoId = idMatch ? idMatch[1] : null
+    // Build the Facebook SDK embed URL (works when allowed, but we use card as primary)
+    const pluginUrl = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=560&autoplay=true`
     return {
-      platform: 'facebook', originalUrl: url,
-      embedUrl: `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&autoplay=true`,
-      videoId: null, title: 'Facebook Video', thumbnail: null, canEmbed: true, playerType: 'iframe',
+      platform: 'facebook',
+      originalUrl: url,
+      embedUrl: pluginUrl,
+      videoId,
+      title: 'Facebook Video',
+      thumbnail: null,
+      canEmbed: false,
+      playerType: 'facebook-card',
     }
   }
   return null
