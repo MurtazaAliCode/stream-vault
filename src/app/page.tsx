@@ -113,7 +113,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'Descargas Totales',
     statsActive: 'Usuarios Activos',
     statsFree: 'Gratis Siempre',
-    back: 'STREAMVAULT'
+    back: 'STREAMVAULT',
+    appPromo: '¡Instala StreamVault como una aplicación! Haz clic en el menú ⋮ y selecciona "Agregar a la pantalla de inicio".'
   },
   fr: {
     tagline: 'Collez n\'importe quel lien vidéo de n\'importe où — regardez-le instantanément, sans distraction',
@@ -136,7 +137,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'Téléchargements',
     statsActive: 'Utilisateurs Actifs',
     statsFree: 'Gratuit Toujours',
-    back: 'STREAMVAULT'
+    back: 'STREAMVAULT',
+    appPromo: 'Installez StreamVault en tant qu\'application ! Cliquez sur le menu ⋮ et sélectionnez "Ajouter à l\'écran d\'accueil".'
   },
   de: {
     tagline: 'Fügen Sie einen Videolink ein — schauen Sie sofort, ohne Ablenkungen',
@@ -159,7 +161,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'Downloads Gesamt',
     statsActive: 'Aktive Nutzer',
     statsFree: 'Immer Kostenlos',
-    back: 'STREAMVAULT'
+    back: 'STREAMVAULT',
+    appPromo: 'Installieren Sie StreamVault als App! Klicken Sie auf das ⋮ Menü und wählen Sie "Zum Startbildschirm hinzufügen".'
   },
   ar: {
     tagline: 'الصق أي رابط فيديو من أي مكان - شاهده على الفور ، دون تشتيت الانتباه',
@@ -182,7 +185,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'إجمالي التحميلات',
     statsActive: 'المستخدمين النشطين',
     statsFree: 'مجاني للأبد',
-    back: 'ستريم فولت'
+    back: 'ستريم فولت',
+    appPromo: 'قم بتثبيت StreamVault كطبيق! انقر فوق قائمة ⋮ وحدد "إضافة إلى الشاشة الرئيسية".'
   },
   pt: {
     tagline: 'Cole qualquer link de vídeo de qualquer lugar — assista instantaneamente, sem distrações',
@@ -205,7 +209,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'Total de Downloads',
     statsActive: 'Usuários Ativos',
     statsFree: 'Grátis Sempre',
-    back: 'STREAMVAULT'
+    back: 'STREAMVAULT',
+    appPromo: 'Instale o StreamVault como um app! Clique no menu ⋮ e selecione "Adicionar à tela inicial".'
   },
   ru: {
     tagline: 'Вставьте любую ссылку на видео — смотрите мгновенно, без рекламы',
@@ -228,7 +233,8 @@ const TRANSLATIONS: any = {
     statsDownloads: 'Всего скачиваний',
     statsActive: 'Активные пользователи',
     statsFree: 'Всегда бесплатно',
-    back: 'STREAMVAULT'
+    back: 'STREAMVAULT',
+    appPromo: 'Установите StreamVault как приложение! Нажмите меню ⋮ и выберите "Добавить на главный экран".'
   },
   ja: {
     tagline: 'どこからでもビデオリンクを貼り付けます — すぐに、気を散らすことなく視聴できます',
@@ -252,7 +258,8 @@ const TRANSLATIONS: any = {
     statsActive: 'アクティブユーザー',
     statsFree: '永久無料',
     back: 'ストリームヴォルト',
-    downloadPromo: 'ご存知ですか？動画を保存してオフラインで見ることもできます。'
+    downloadPromo: 'ご存知ですか？動画を保存してオフラインで見ることもできます。',
+    appPromo: 'StreamVaultをアプリとしてインストール！ ⋮ メニューをクリックして「ホーム画面に追加」を選択してください。'
   },
   it: {
     tagline: 'Incolla qualsiasi link video da qualsiasi luogo — guardalo istantaneamente, senza distrazioni',
@@ -276,18 +283,19 @@ const TRANSLATIONS: any = {
     statsActive: 'Utenti Attivi',
     statsFree: 'Sempre Gratis',
     back: 'STREAMVAULT',
-    downloadPromo: 'Lo sapevi? Puoi also salvare i video per guardarli offline!'
+    downloadPromo: 'Lo sapevi? Puoi also salvare i video per guardarli offline!',
+    appPromo: 'Installa StreamVault come app! Fai clic sul menu ⋮ e seleziona "Aggiungi a schermata Home".'
   },
-  zh: { tagline: '从任何地方粘贴视频链接 — 立即观看，无干扰', placeholder: '粘贴视频链接 — YouTube, Vimeo, Twitch...', play: '播放', history: '历史', newVideo: '新视频', copyLink: '复制链接', openOriginal: '打开原件', save: '保存', share: '分享', back: 'STREAMVAULT' },
-  ko: { tagline: '어디서나 비디오 링크를 붙여넣으세요 — 산만함 없이 즉시 시청하세요', placeholder: '비디오 링크 붙여넣기 — YouTube, Vimeo, Twitch...', play: '재생', history: '기록', newVideo: '새 비디오', copyLink: '링크 복사', openOriginal: '원본 열기', save: '저장', share: '공유', back: 'STREAMVAULT' },
-  tr: { tagline: 'Herhangi bir video bağlantısını yapıştırın — anında, dikkat dağıtıcı unsurlar olmadan izleyin', placeholder: 'Video bağlantısını yapıştırın — YouTube, Vimeo, Twitch...', play: 'OYNAT', history: 'Geçmiş', newVideo: 'Yeni Video', copyLink: 'Bağlantıyı Kopyala', openOriginal: 'Orijinali Aç', save: 'Kaydet', share: 'Paylaş', back: 'STREAMVAULT' },
-  vi: { tagline: 'Dán bất kỳ liên kết video nào từ bất cứ đâu — xem ngay lập tức, không bị xao nhãng', placeholder: 'Dán liên kết video — YouTube, Vimeo, Twitch...', play: 'PHÁT', history: 'Lịch sử', newVideo: 'Video Mới', copyLink: 'Sao chép liên kết', openOriginal: 'Mở bản gốc', save: 'Lưu', share: 'Chia sẻ', back: 'STREAMVAULT' },
-  th: { tagline: 'วางลิงก์วิดีโอจากที่ใดก็ได้ — รับชมได้ทันทีโดยไม่มีสิ่งรบกวน', placeholder: 'วางลิงก์วิดีโอ — YouTube, Vimeo, Twitch...', play: 'เล่น', history: 'ประวัติ', newVideo: 'วิดีโอใหม่', copyLink: 'คัดลอกลิงก์', openOriginal: 'เปิดต้นฉβับ', save: 'บันทึก', share: 'แชร์', back: 'STREAMVAULT' },
-  id: { tagline: 'Tempel tautan video dari mana saja — tonton secara instan, bebas gangguan', placeholder: 'Tempel tautan video — YouTube, Vimeo, Twitch...', play: 'PUTAR', history: 'Riwayat', newVideo: 'Video Baru', copyLink: 'Salin Tautan', openOriginal: 'Buka Asli', save: 'Simpan', share: 'Bagikan', back: 'STREAMVAULT' },
-  pl: { tagline: 'Wklej link do filmu z dowolnego miejsca — oglądaj natychmiast, bez rozpraszania uwagi', placeholder: 'Wklej link do filmu — YouTube, Vimeo, Twitch...', play: 'ODTWÓRZ', history: 'Historia', newVideo: 'Nowy film', copyLink: 'Kopiuj link', openOriginal: 'Otwórz oryginał', save: 'Zapisz', share: 'Udostępnij', back: 'STREAMVAULT' },
-  nl: { tagline: 'Plak elke videolink van overal — bekijk direct, zonder afleiding', placeholder: 'Plak videolink — YouTube, Vimeo, Twitch...', play: 'AFSPELEN', history: 'Geschiedenis', newVideo: 'Nieuwe video', copyLink: 'Link kopiëren', openOriginal: 'Open origineel', save: 'Opslaan', share: 'Delen', back: 'STREAMVAULT' },
-  sv: { tagline: 'Klistra in valfri videolänk varifrån som helst — titta direkt, utan distraktioner', placeholder: 'Klistra in videolänk — YouTube, Vimeo, Twitch...', play: 'SPELA', history: 'Historik', newVideo: 'Ny video', copyLink: 'Kopiera länk', openOriginal: 'Öppna original', save: 'Spara', share: 'Dela', back: 'STREAMVAULT' },
-  el: { tagline: 'Επικολλήστε οποιονδήποτε σύνδεσμο βίντεο από οπουδήποτε — παρακολουθήστε αμέσως, χωρίς περισπασμούς', placeholder: 'Επικολλήστε σύνδεσμο βίντεο — YouTube, Vimeo, Twitch...', play: 'ΑΝΑΠΑΡΑΓΩΓΗ', history: 'Ιστορικό', newVideo: 'Νέο βίντεο', copyLink: 'Αντιγραφή συνδέσμου', openOriginal: 'Άνοιγμα πρωτοτύπου', save: 'Αποθήκευση', share: 'Κοινοποίηση', back: 'STREAMVAULT' }
+  zh: { tagline: '从任何地方粘贴视频链接 — 立即观看，无干扰', placeholder: '粘贴视频链接 — YouTube, Vimeo, Twitch...', play: '播放', history: '历史', newVideo: '新视频', copyLink: '复制链接', openOriginal: '打开原件', save: '保存', share: '分享', back: 'STREAMVAULT', appPromo: '将 StreamVault 安装为应用！点击 ⋮ 菜单并选择“添加到主屏幕”。' },
+  ko: { tagline: '어디서나 비디오 링크를 붙여넣으세요 — 산만함 없이 즉시 시청하세요', placeholder: '비디오 링크 붙여넣기 — YouTube, Vimeo, Twitch...', play: '재생', history: '기록', newVideo: '새 비디오', copyLink: '링크 복사', openOriginal: '원본 열기', save: '저장', share: '공유', back: 'STREAMVAULT', appPromo: 'StreamVault를 앱으로 설치하세요! ⋮ 메뉴를 클릭하고 "홈 화면에 추가"를 선택하세요.' },
+  tr: { tagline: 'Herhangi bir video bağlantısını yapıştırın — anında, dikkat dağıtıcı unsurlar olmadan izleyin', placeholder: 'Video bağlantısını yapıştırın — YouTube, Vimeo, Twitch...', play: 'OYNAT', history: 'Geçmiş', newVideo: 'Yeni Video', copyLink: 'Bağlantıyı Kopyala', openOriginal: 'Orijinali Aç', save: 'Kaydet', share: 'Paylaş', back: 'STREAMVAULT', appPromo: 'StreamVault\'u uygulama olarak yükleyin! ⋮ menüsüne tıklayın ve "Ana Ekrana Ekle"yi seçin.' },
+  vi: { tagline: 'Dán bất kỳ liên kết video nào từ bất cứ đâu — xem ngay lập tức, không bị xao nhãng', placeholder: 'Dán liên kết video — YouTube, Vimeo, Twitch...', play: 'PHÁT', history: 'Lịch sử', newVideo: 'Video Mới', copyLink: 'Sao chép liên kết', openOriginal: 'Mở bản gốc', save: 'Lưu', share: 'Chia sẻ', back: 'STREAMVAULT', appPromo: 'Cài đặt StreamVault làm ứng dụng! Nhấp vào menu ⋮ và chọn "Thêm vào màn hình chính".' },
+  th: { tagline: 'วางลิงก์วิดีโอจากที่ใดก็ได้ — รับชมได้ทันทีโดยไม่มีสิ่งรบกวน', placeholder: 'วางลิงก์วิดีโอ — YouTube, Vimeo, Twitch...', play: 'เล่น', history: 'ประวัติ', newVideo: 'วิดีโอใหม่', copyLink: 'คัดลอกลิงก์', openOriginal: 'เปิดต้นฉβับ', save: 'บันทึก', share: 'แชร์', back: 'STREAMVAULT', appPromo: 'ติดตั้ง StreamVault เป็นแอป! คลิกเมนู ⋮ แล้วเลือก "เพิ่มในหน้าจอหลัก"' },
+  id: { tagline: 'Tempel tautan video dari mana saja — tonton secara instan, bebas gangguan', placeholder: 'Tempel tautan video — YouTube, Vimeo, Twitch...', play: 'PUTAR', history: 'Riwayat', newVideo: 'Video Baru', copyLink: 'Salin Tautan', openOriginal: 'Buka Asli', save: 'Simpan', share: 'Bagikan', back: 'STREAMVAULT', appPromo: 'Instal StreamVault sebagai aplikasi! Klik menu ⋮ dan pilih "Tambahkan ke Layar Utama".' },
+  pl: { tagline: 'Wklej link do filmu z dowolnego miejsca — oglądaj natychmiast, bez rozpraszania uwagi', placeholder: 'Wklej link do filmu — YouTube, Vimeo, Twitch...', play: 'ODTWÓRZ', history: 'Historia', newVideo: 'Nowy film', copyLink: 'Kopiuj link', openOriginal: 'Otwórz oryginał', save: 'Zapisz', share: 'Udostępnij', back: 'STREAMVAULT', appPromo: 'Zainstaluj StreamVault jako aplikację! Kliknij menu ⋮ i wybierz „Dodaj do ekranu głównego”.' },
+  nl: { tagline: 'Plak elke videolink van overal — bekijk direct, zonder afleiding', placeholder: 'Plak videolink — YouTube, Vimeo, Twitch...', play: 'AFSPELEN', history: 'Geschiedenis', newVideo: 'Nieuwe video', copyLink: 'Link kopiëren', openOriginal: 'Open origineel', save: 'Opslaan', share: 'Delen', back: 'STREAMVAULT', appPromo: 'Installeer StreamVault als app! Klik op het ⋮ menu en selecteer "Toevoegen aan beginscherm".' },
+  sv: { tagline: 'Klistra in valfri videolänk varifrån som helst — titta direkt, utan distraktioner', placeholder: 'Klistra in videolänk — YouTube, Vimeo, Twitch...', play: 'SPELA', history: 'Historik', newVideo: 'Ny video', copyLink: 'Kopiera länk', openOriginal: 'Öppνα original', save: 'Spara', share: 'Dela', back: 'STREAMVAULT', appPromo: 'Installera StreamVault som en app! Klicka på ⋮-menyn och välj "Lägg till på hemskärmen".' },
+  el: { tagline: 'Επικολλήστε οποιονδήποτε σύνδεσμο βίντεο από οπουδήποτε — παρακολουθήστε αμέσως, χωρίς περισπασμούς', placeholder: 'Επικολλήστε σύνδεσμο βίντεο — YouTube, Vimeo, Twitch...', play: 'ΑΝΑΠΑΡΑΓΩΓΗ', history: 'Ιστορικό', newVideo: 'Νέο βίντεο', copyLink: 'Αντιγραφή συνδέσμου', openOriginal: 'Άνοιγμα πρωτοτύπου', save: 'Αποθήκευση', share: 'Κοινοποίηση', back: 'STREAMVAULT', appPromo: 'Εγκαταστήστε το StreamVault ως εφαρμογή! Κάντε κλικ στο μενού ⋮ και επιλέξτε "Προσθήκη στην αρχική οθόνη".' }
 }
 
 
