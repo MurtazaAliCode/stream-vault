@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://stream-vault-omega.vercel.app'),
   title: 'StreamVault — Watch Any Video Link',
   description: 'Paste any video URL from YouTube, Vimeo, Twitch, Dailymotion, direct files and more. Watch instantly in a clean, distraction-free player.',
-  keywords: 'video player, youtube player, vimeo player, watch videos online, universal video player',
+  keywords: 'video player, youtube player, vimeo player, watch videos online, universal video player, multi-language video player, online player urdu, hindi, spanish, chinese',
   alternates: {
     canonical: '/',
   },
