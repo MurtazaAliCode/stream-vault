@@ -276,8 +276,18 @@ const TRANSLATIONS: any = {
     statsActive: 'Utenti Attivi',
     statsFree: 'Sempre Gratis',
     back: 'STREAMVAULT',
-    downloadPromo: 'Lo sapevi? Puoi anche salvare i video per guardarli offline!'
-  }
+    downloadPromo: 'Lo sapevi? Puoi also salvare i video per guardarli offline!'
+  },
+  zh: { tagline: '从任何地方粘贴视频链接 — 立即观看，无干扰', placeholder: '粘贴视频链接 — YouTube, Vimeo, Twitch...', play: '播放', history: '历史', newVideo: '新视频', copyLink: '复制链接', openOriginal: '打开原件', save: '保存', share: '分享', back: 'STREAMVAULT' },
+  ko: { tagline: '어디서나 비디오 링크를 붙여넣으세요 — 산만함 없이 즉시 시청하세요', placeholder: '비디오 링크 붙여넣기 — YouTube, Vimeo, Twitch...', play: '재생', history: '기록', newVideo: '새 비디오', copyLink: '링크 복사', openOriginal: '원본 열기', save: '저장', share: '공유', back: 'STREAMVAULT' },
+  tr: { tagline: 'Herhangi bir video bağlantısını yapıştırın — anında, dikkat dağıtıcı unsurlar olmadan izleyin', placeholder: 'Video bağlantısını yapıştırın — YouTube, Vimeo, Twitch...', play: 'OYNAT', history: 'Geçmiş', newVideo: 'Yeni Video', copyLink: 'Bağlantıyı Kopyala', openOriginal: 'Orijinali Aç', save: 'Kaydet', share: 'Paylaş', back: 'STREAMVAULT' },
+  vi: { tagline: 'Dán bất kỳ liên kết video nào từ bất cứ đâu — xem ngay lập tức, không bị xao nhãng', placeholder: 'Dán liên kết video — YouTube, Vimeo, Twitch...', play: 'PHÁT', history: 'Lịch sử', newVideo: 'Video Mới', copyLink: 'Sao chép liên kết', openOriginal: 'Mở bản gốc', save: 'Lưu', share: 'Chia sẻ', back: 'STREAMVAULT' },
+  th: { tagline: 'วางลิงก์วิดีโอจากที่ใดก็ได้ — รับชมได้ทันทีโดยไม่มีสิ่งรบกวน', placeholder: 'วางลิงก์วิดีโอ — YouTube, Vimeo, Twitch...', play: 'เล่น', history: 'ประวัติ', newVideo: 'วิดีโอใหม่', copyLink: 'คัดลอกลิงก์', openOriginal: 'เปิดต้นฉβับ', save: 'บันทึก', share: 'แชร์', back: 'STREAMVAULT' },
+  id: { tagline: 'Tempel tautan video dari mana saja — tonton secara instan, bebas gangguan', placeholder: 'Tempel tautan video — YouTube, Vimeo, Twitch...', play: 'PUTAR', history: 'Riwayat', newVideo: 'Video Baru', copyLink: 'Salin Tautan', openOriginal: 'Buka Asli', save: 'Simpan', share: 'Bagikan', back: 'STREAMVAULT' },
+  pl: { tagline: 'Wklej link do filmu z dowolnego miejsca — oglądaj natychmiast, bez rozpraszania uwagi', placeholder: 'Wklej link do filmu — YouTube, Vimeo, Twitch...', play: 'ODTWÓRZ', history: 'Historia', newVideo: 'Nowy film', copyLink: 'Kopiuj link', openOriginal: 'Otwórz oryginał', save: 'Zapisz', share: 'Udostępnij', back: 'STREAMVAULT' },
+  nl: { tagline: 'Plak elke videolink van overal — bekijk direct, zonder afleiding', placeholder: 'Plak videolink — YouTube, Vimeo, Twitch...', play: 'AFSPELEN', history: 'Geschiedenis', newVideo: 'Nieuwe video', copyLink: 'Link kopiëren', openOriginal: 'Open origineel', save: 'Opslaan', share: 'Delen', back: 'STREAMVAULT' },
+  sv: { tagline: 'Klistra in valfri videolänk varifrån som helst — titta direkt, utan distraktioner', placeholder: 'Klistra in videolänk — YouTube, Vimeo, Twitch...', play: 'SPELA', history: 'Historik', newVideo: 'Ny video', copyLink: 'Kopiera länk', openOriginal: 'Öppna original', save: 'Spara', share: 'Dela', back: 'STREAMVAULT' },
+  el: { tagline: 'Επικολλήστε οποιονδήποτε σύνδεσμο βίντεο από οπουδήποτε — παρακολουθήστε αμέσως, χωρίς περισπασμούς', placeholder: 'Επικολλήστε σύνδεσμο βίντεο — YouTube, Vimeo, Twitch...', play: 'ΑΝΑΠΑΡΑΓΩΓΗ', history: 'Ιστορικό', newVideo: 'Νέο βίντεο', copyLink: 'Αντιγραφή συνδέσμου', openOriginal: 'Άνοιγμα πρωτοτύπου', save: 'Αποθήκευση', share: 'Κοινοποίηση', back: 'STREAMVAULT' }
 }
 
 
